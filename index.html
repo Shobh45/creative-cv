@@ -27,7 +27,7 @@ body{
 }
 
 /* ---------- shell ---------- */
-.shell{display:grid;grid-template-columns:clamp(240px,20vw,300px) 1fr;height:100vh}
+.shell{display:grid;grid-template-columns:clamp(258px,21vw,322px) 1fr;height:100vh}
 
 /* ---------- sidebar ---------- */
 .side{
@@ -43,19 +43,19 @@ body{
   font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vh,36px);letter-spacing:.02em;
 }
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
-.side h1{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.5vh,26px);text-align:center;line-height:1.15}
+.side h1{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.8vh,29px);text-align:center;line-height:1.15}
 .side .role{
-  text-align:center;color:var(--gold);font-size:clamp(9px,1.15vh,11px);
+  text-align:center;color:var(--gold);font-size:clamp(10px,1.3vh,12px);
   letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-top:4px;
 }
-.side .city{text-align:center;color:var(--line);opacity:.62;font-size:clamp(10px,1.3vh,12.5px);margin-top:3px}
+.side .city{text-align:center;color:var(--line);opacity:.62;font-size:clamp(11px,1.45vh,14px);margin-top:3px}
 .side hr{border:0;border-top:1px solid rgba(229,229,229,.16)}
 .label{
-  color:var(--gold);font-size:clamp(8.5px,1.05vh,10px);letter-spacing:.2em;
+  color:var(--gold);font-size:clamp(9.5px,1.18vh,11.5px);letter-spacing:.2em;
   text-transform:uppercase;font-weight:600;
 }
 .about{
-  color:var(--line);opacity:.9;font-size:clamp(11px,1.42vh,13.5px);line-height:1.62;font-weight:300;
+  color:var(--line);opacity:.9;font-size:clamp(12px,1.58vh,15px);line-height:1.6;font-weight:300;
 }
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .tile{
@@ -66,9 +66,9 @@ body{
 .creds{display:flex;flex-direction:column;gap:clamp(7px,1.1vh,12px)}
 .cred{display:flex;gap:9px;align-items:flex-start}
 .cred .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:6px;flex:none}
-.cred b{display:block;font-size:clamp(10.5px,1.3vh,12.5px);font-weight:500;line-height:1.3}
-.cred span{display:block;color:var(--line);opacity:.55;font-size:clamp(9px,1.12vh,11px);margin-top:2px}
-.side .mail{margin-top:auto;color:var(--gold);font-size:clamp(10px,1.25vh,12px);text-align:center;text-decoration:none;word-break:break-all}
+.cred b{display:block;font-size:clamp(11.5px,1.45vh,14px);font-weight:500;line-height:1.3}
+.cred span{display:block;color:var(--line);opacity:.55;font-size:clamp(10px,1.26vh,12.5px);margin-top:2px}
+.side .mail{margin-top:auto;color:var(--gold);font-size:clamp(11px,1.4vh,13.5px);text-align:center;text-decoration:none;word-break:break-all}
 
 /* ---------- main ---------- */
 .main{
@@ -79,18 +79,18 @@ body{
   height:100vh;overflow:hidden;
 }
 .sechead{display:flex;align-items:baseline;gap:12px;padding-top:clamp(3px,.7vh,9px)}
-.sechead .num{color:var(--gold);font-size:clamp(9px,1.1vh,11px);font-weight:600;letter-spacing:.14em}
-.sechead h2{font-family:var(--serif);font-size:clamp(17px,2.35vh,26px);font-weight:600;letter-spacing:-.01em}
+.sechead .num{color:var(--gold);font-size:clamp(10px,1.22vh,12.5px);font-weight:600;letter-spacing:.14em}
+.sechead h2{font-family:var(--serif);font-size:clamp(19px,2.6vh,29px);font-weight:600;letter-spacing:-.01em}
 .sechead .rule{flex:1;height:1px;background:var(--line)}
-.sechead .hint{color:var(--muted);font-size:clamp(9px,1.1vh,11px);opacity:.75;white-space:nowrap}
+.sechead .hint{color:var(--muted);font-size:clamp(10px,1.22vh,12.5px);opacity:.75;white-space:nowrap}
 
 .card{
   background:#fff;border:1px solid var(--line);border-radius:10px;
   padding:clamp(10px,1.5vh,18px) clamp(11px,1vw,18px);
   display:flex;flex-direction:column;min-height:0;min-width:0;
 }
-.card h3{font-family:var(--serif);font-size:clamp(12.5px,1.62vh,17px);font-weight:600;line-height:1.2}
-.card .sub{color:var(--muted);font-size:clamp(9px,1.12vh,11.5px);margin-top:3px;line-height:1.4}
+.card h3{font-family:var(--serif);font-size:clamp(14px,1.8vh,19px);font-weight:600;line-height:1.2}
+.card .sub{color:var(--muted);font-size:clamp(10px,1.26vh,13px);margin-top:3px;line-height:1.4}
 
 /* ---------- section 1 ---------- */
 .drives{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,.9vw,16px);min-height:0}
@@ -98,7 +98,7 @@ body{
 .drive:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 18px rgba(17,17,17,.06)}
 .drive .ico{width:clamp(17px,2.1vh,22px);height:clamp(17px,2.1vh,22px);color:var(--gold)}
 .drive .ico svg{width:100%;height:100%;display:block}
-.more{color:var(--gold);font-size:clamp(9px,1.1vh,11px);font-weight:500;margin-top:auto;padding-top:6px}
+.more{color:var(--gold);font-size:clamp(10px,1.22vh,12.5px);font-weight:500;margin-top:auto;padding-top:6px}
 
 /* ---------- section 2 ---------- */
 .journey{display:grid;grid-template-columns:1.55fr 1.2fr .9fr;gap:clamp(8px,.9vw,16px);min-height:0}
@@ -106,7 +106,7 @@ body{
 .plot svg{width:100%;height:100%;display:block;overflow:visible}
 .legend{display:flex;gap:14px;align-items:center;margin-top:6px}
 .legend i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:5px}
-.legend span{color:var(--muted);font-size:clamp(8.5px,1.05vh,10.5px)}
+.legend span{color:var(--muted);font-size:clamp(9.5px,1.16vh,12px)}
 
 /* ---------- section 3 ---------- */
 .world{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:clamp(8px,.9vw,16px);min-height:0}
@@ -117,10 +117,10 @@ body{
 .quote .mark{font-family:var(--serif);color:var(--gold);font-size:clamp(22px,3vh,34px);line-height:.7}
 .quote p{
   font-family:var(--serif);font-style:italic;font-weight:500;
-  font-size:clamp(11.5px,1.72vh,18px);line-height:1.45;margin-top:clamp(6px,1vh,12px);
+  font-size:clamp(12.5px,1.88vh,19.5px);line-height:1.44;margin-top:clamp(6px,1vh,12px);
 }
 .quote .cap{
-  color:var(--gold);font-family:var(--sans);font-style:normal;font-size:clamp(8.5px,1.02vh,10px);
+  color:var(--gold);font-family:var(--sans);font-style:normal;font-size:clamp(9.5px,1.12vh,11px);
   letter-spacing:.18em;text-transform:uppercase;margin-top:clamp(7px,1.2vh,14px);
   border-top:1px solid var(--gold);padding-top:clamp(6px,1vh,11px);width:34px;
   white-space:nowrap;
@@ -154,17 +154,17 @@ body{
 .slot .ph{
   width:100%;height:100%;border:1px dashed var(--gold);background:var(--gold-faint);
   border-radius:2px;display:grid;place-content:center;text-align:center;padding:12px;
-  color:var(--muted);font-size:9px;line-height:1.5;letter-spacing:.02em;
+  color:var(--muted);font-size:10px;line-height:1.5;letter-spacing:.02em;
 }
-.slot .ph b{display:block;color:var(--gold);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.slot .ph b{display:block;color:var(--gold);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
 .mbody{
   padding:clamp(24px,4vh,44px) clamp(24px,3vw,44px);overflow-y:auto;
   display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center;
 }
 .mbody .ico{width:26px;height:26px;color:var(--gold);margin-bottom:14px}
-.mbody h3{font-family:var(--serif);font-size:clamp(19px,2.7vh,27px);font-weight:600;line-height:1.2}
+.mbody h3{font-family:var(--serif);font-size:clamp(21px,2.95vh,30px);font-weight:600;line-height:1.2}
 .mbody .divider{width:38px;height:1px;background:var(--gold);margin:clamp(11px,1.6vh,16px) 0 2px}
-.mbody p{color:var(--muted);font-size:clamp(11.5px,1.5vh,14px);line-height:1.78;margin-top:13px;max-width:44ch}
+.mbody p{color:var(--muted);font-size:clamp(12.5px,1.68vh,16px);line-height:1.75;margin-top:14px;max-width:46ch}
 .mbody.list{text-align:left;align-items:stretch}
 .mbody.list h3,.mbody.list .ico{align-self:center}
 .mbody.list .divider{align-self:center}
@@ -438,7 +438,7 @@ function drawTrajectory(){
   if(W<10||H<10) return;
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
   svg.innerHTML='';
-  const L=6,R=6,T=40,B=22;
+  const L=6,R=6,T=44,B=24;
   const n=MILESTONES.length;
   const x=i=>L+(W-L-R)*(i/(n-1));
   const y=v=>T+(H-T-B)*(1-v/100);
@@ -470,16 +470,16 @@ function drawTrajectory(){
     const lines=[];let cur='';
     words.forEach(w=>{ if((cur+' '+w).trim().length>14){lines.push(cur.trim());cur=w;} else cur+=' '+w; });
     if(cur.trim())lines.push(cur.trim());
-    const lh=9.4, lift=(i%2===0)?0:11;
+    const lh=10.4, lift=(i%2===0)?0:12;
     const baseY = Math.max(9+(lines.length-1)*lh, py-14-lift-(lines.length-1)*lh);
     lines.forEach((ln,k)=>{
       const t=el('text',{x:px,y:baseY+k*lh,'text-anchor':anchor,
-        fill:'#111111','font-size':7.6,'font-family':'Inter,sans-serif','font-weight':700});
+        fill:'#111111','font-size':8.6,'font-family':'Inter,sans-serif','font-weight':700});
       t.textContent=ln;svg.appendChild(t);
     });
 
     const dt=el('text',{x:px,y:H-B+13,'text-anchor':anchor,
-      fill:'#555555','font-size':8,'font-family':'Inter,sans-serif'});
+      fill:'#555555','font-size':9,'font-family':'Inter,sans-serif'});
     dt.textContent=m.date;svg.appendChild(dt);
   });
 }
@@ -492,7 +492,7 @@ function drawBars(){
   if(W<10||H<10) return;
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
   svg.innerHTML='';
-  const LBL=Math.min(92,W*0.36), R=16, T=2, B=14;
+  const LBL=Math.min(108,W*0.40), R=16, T=2, B=15;
   const plotW=W-LBL-R, plotH=H-T-B;
   const items=[...STRENGTHS.map(s=>({...s,kind:'s'})),...GROWTH.map(g=>({...g,kind:'g'}))];
   const rows=items.length, rowH=plotH/rows, barH=Math.min(10,rowH*0.46);
@@ -501,13 +501,13 @@ function drawBars(){
     const gx=LBL+plotW*v/100;
     svg.appendChild(el('line',{x1:gx,y1:T,x2:gx,y2:T+plotH,stroke:'#E5E5E5','stroke-width':1,
       'stroke-dasharray':v===0?'':'2 3'}));
-    const t=el('text',{x:gx,y:H-3,'text-anchor':'middle',fill:'#555555','font-size':7.5,'font-family':'Inter,sans-serif'});
+    const t=el('text',{x:gx,y:H-3,'text-anchor':'middle',fill:'#555555','font-size':8.5,'font-family':'Inter,sans-serif'});
     t.textContent=v;svg.appendChild(t);
   });
 
   items.forEach((s,i)=>{
     const cy=T+rowH*i+rowH/2;
-    const lb=el('text',{x:LBL-8,y:cy+3,'text-anchor':'end',fill:'#111111','font-size':8.4,
+    const lb=el('text',{x:LBL-8,y:cy+3,'text-anchor':'end',fill:'#111111','font-size':9.4,
       'font-family':'Inter,sans-serif','font-weight':500});
     lb.textContent=s.name;svg.appendChild(lb);
     svg.appendChild(el('rect',{x:LBL,y:cy-barH/2,width:Math.max(1,plotW*s.value/100),height:barH,
@@ -553,7 +553,7 @@ function drawMap(){
     svg.appendChild(el('circle',{cx,cy,r:2.8,fill:'#C8A96A'}));
     const right=p.side!=='l';
     const t=el('text',{x:cx+(right?8:-8),y:cy+3,'text-anchor':right?'start':'end',
-      fill:'#111111','font-size':7.8,'font-family':'Inter,sans-serif','font-weight':600});
+      fill:'#111111','font-size':8.7,'font-family':'Inter,sans-serif','font-weight':600});
     t.textContent=p.name;svg.appendChild(t);
   });
   document.getElementById('mapsub').textContent=`${PLACES.length} cities across India`;
