@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shobhit Jain — Creative CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF8;
+  --ink:#111111;
+  --muted:#555555;
+  --gold:#C8A96A;
+  --line:#E5E5E5;
+  --gold-soft:rgba(200,169,106,.30);
+  --gold-faint:rgba(200,169,106,.10);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);
+  overflow:hidden;
+}
+
+/* ---------- shell ---------- */
+.shell{display:grid;grid-template-columns:clamp(240px,20vw,300px) 1fr;height:100vh}
+
+/* ---------- sidebar ---------- */
+.side{
+  background:var(--ink);color:var(--bg);
+  padding:clamp(18px,2.4vh,30px) clamp(18px,1.4vw,26px);
+  display:flex;flex-direction:column;gap:clamp(10px,1.6vh,20px);
+  overflow:hidden;
+}
+.avatar{
+  width:clamp(96px,13vh,146px);height:clamp(96px,13vh,146px);border-radius:50%;
+  margin:0 auto;display:grid;place-items:center;overflow:hidden;
+  background:var(--gold);color:var(--ink);border:2px solid var(--gold);
+  font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vh,36px);letter-spacing:.02em;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.side h1{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.5vh,26px);text-align:center;line-height:1.15}
+.side .role{
+  text-align:center;color:var(--gold);font-size:clamp(9px,1.15vh,11px);
+  letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-top:4px;
+}
+.side .city{text-align:center;color:var(--line);opacity:.62;font-size:clamp(10px,1.3vh,12.5px);margin-top:3px}
+.side hr{border:0;border-top:1px solid rgba(229,229,229,.16)}
+.label{
+  color:var(--gold);font-size:clamp(8.5px,1.05vh,10px);letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;
+}
+.about{
+  color:var(--line);opacity:.9;font-size:clamp(11px,1.42vh,13.5px);line-height:1.62;font-weight:300;
+}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile{
+  border:1px solid rgba(229,229,229,.18);border-radius:6px;padding:clamp(6px,1vh,11px) 6px;text-align:center;
+}
+.tile b{display:block;font-family:var(--serif);color:var(--gold);font-size:clamp(15px,2vh,21px);font-weight:600}
+.tile span{display:block;color:var(--line);opacity:.6;font-size:clamp(8px,1vh,9.5px);letter-spacing:.09em;text-transform:uppercase;margin-top:2px}
+.creds{display:flex;flex-direction:column;gap:clamp(7px,1.1vh,12px)}
+.cred{display:flex;gap:9px;align-items:flex-start}
+.cred .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:6px;flex:none}
+.cred b{display:block;font-size:clamp(10.5px,1.3vh,12.5px);font-weight:500;line-height:1.3}
+.cred span{display:block;color:var(--line);opacity:.55;font-size:clamp(9px,1.12vh,11px);margin-top:2px}
+.side .mail{margin-top:auto;color:var(--gold);font-size:clamp(10px,1.25vh,12px);text-align:center;text-decoration:none;word-break:break-all}
+
+/* ---------- main ---------- */
+.main{
+  padding:clamp(14px,2vh,26px) clamp(16px,1.8vw,32px);
+  display:grid;
+  grid-template-rows:auto minmax(0,.92fr) auto minmax(0,2.15fr) auto minmax(0,1.28fr);
+  gap:clamp(5px,.75vh,10px);
+  height:100vh;overflow:hidden;
+}
+.sechead{display:flex;align-items:baseline;gap:12px;padding-top:clamp(3px,.7vh,9px)}
+.sechead .num{color:var(--gold);font-size:clamp(9px,1.1vh,11px);font-weight:600;letter-spacing:.14em}
+.sechead h2{font-family:var(--serif);font-size:clamp(17px,2.35vh,26px);font-weight:600;letter-spacing:-.01em}
+.sechead .rule{flex:1;height:1px;background:var(--line)}
+.sechead .hint{color:var(--muted);font-size:clamp(9px,1.1vh,11px);opacity:.75;white-space:nowrap}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:clamp(10px,1.5vh,18px) clamp(11px,1vw,18px);
+  display:flex;flex-direction:column;min-height:0;min-width:0;
+}
+.card h3{font-family:var(--serif);font-size:clamp(12.5px,1.62vh,17px);font-weight:600;line-height:1.2}
+.card .sub{color:var(--muted);font-size:clamp(9px,1.12vh,11.5px);margin-top:3px;line-height:1.4}
+
+/* ---------- section 1 ---------- */
+.drives{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,.9vw,16px);min-height:0}
+.drive{cursor:pointer;transition:border-color .18s,transform .18s,box-shadow .18s;justify-content:space-between}
+.drive:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 18px rgba(17,17,17,.06)}
+.drive .ico{width:clamp(17px,2.1vh,22px);height:clamp(17px,2.1vh,22px);color:var(--gold)}
+.drive .ico svg{width:100%;height:100%;display:block}
+.more{color:var(--gold);font-size:clamp(9px,1.1vh,11px);font-weight:500;margin-top:auto;padding-top:6px}
+
+/* ---------- section 2 ---------- */
+.journey{display:grid;grid-template-columns:1.55fr 1.2fr .9fr;gap:clamp(8px,.9vw,16px);min-height:0}
+.plot{flex:1;min-height:0;margin-top:clamp(4px,.8vh,10px)}
+.plot svg{width:100%;height:100%;display:block;overflow:visible}
+.legend{display:flex;gap:14px;align-items:center;margin-top:6px}
+.legend i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:5px}
+.legend span{color:var(--muted);font-size:clamp(8.5px,1.05vh,10.5px)}
+
+/* ---------- section 3 ---------- */
+.world{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:clamp(8px,.9vw,16px);min-height:0}
+.quote{
+  background:var(--ink);border-color:var(--ink);color:var(--bg);justify-content:center;
+  padding:clamp(12px,2vh,24px) clamp(14px,1.5vw,26px);
+}
+.quote .mark{font-family:var(--serif);color:var(--gold);font-size:clamp(22px,3vh,34px);line-height:.7}
+.quote p{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(11.5px,1.72vh,18px);line-height:1.45;margin-top:clamp(6px,1vh,12px);
+}
+.quote .cap{
+  color:var(--gold);font-family:var(--sans);font-style:normal;font-size:clamp(8.5px,1.02vh,10px);
+  letter-spacing:.18em;text-transform:uppercase;margin-top:clamp(7px,1.2vh,14px);
+  border-top:1px solid var(--gold);padding-top:clamp(6px,1vh,11px);width:34px;
+  white-space:nowrap;
+}
+
+/* ---------- modal ---------- */
+.veil{
+  position:fixed;inset:0;background:rgba(17,17,17,.55);backdrop-filter:blur(3px);
+  display:none;place-items:center;padding:5vh 5vw;z-index:50;
+}
+.veil.on{display:grid}
+.modal{
+  background:#fff;border-radius:12px;width:min(1020px,94vw);max-height:86vh;
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);overflow:hidden;position:relative;
+  box-shadow:0 24px 60px rgba(17,17,17,.28);
+}
+.modal.solo{grid-template-columns:1fr;width:min(640px,92vw)}
+.modal.solo .mbody{padding:clamp(34px,5.5vh,56px) clamp(30px,4vw,54px)}
+.mpics{
+  position:relative;padding:clamp(22px,4vh,40px) clamp(18px,2.2vw,32px);
+  display:grid;place-items:center;min-height:clamp(300px,50vh,440px);
+}
+.slot{
+  position:absolute;width:46%;max-width:200px;aspect-ratio:3/4;background:#fff;padding:6px;
+  border-radius:3px;box-shadow:0 10px 26px rgba(17,17,17,.18);overflow:hidden;
+  display:grid;place-items:center;
+}
+.slot.p1{transform:translate(-21%,3%) rotate(-7deg);z-index:2}
+.slot.p2{transform:translate(21%,-4%) rotate(6deg);z-index:1}
+.slot img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px}
+.slot .ph{
+  width:100%;height:100%;border:1px dashed var(--gold);background:var(--gold-faint);
+  border-radius:2px;display:grid;place-content:center;text-align:center;padding:12px;
+  color:var(--muted);font-size:9px;line-height:1.5;letter-spacing:.02em;
+}
+.slot .ph b{display:block;color:var(--gold);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.mbody{
+  padding:clamp(24px,4vh,44px) clamp(24px,3vw,44px);overflow-y:auto;
+  display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center;
+}
+.mbody .ico{width:26px;height:26px;color:var(--gold);margin-bottom:14px}
+.mbody h3{font-family:var(--serif);font-size:clamp(19px,2.7vh,27px);font-weight:600;line-height:1.2}
+.mbody .divider{width:38px;height:1px;background:var(--gold);margin:clamp(11px,1.6vh,16px) 0 2px}
+.mbody p{color:var(--muted);font-size:clamp(11.5px,1.5vh,14px);line-height:1.78;margin-top:13px;max-width:44ch}
+.x{
+  position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;
+  font-size:15px;line-height:1;display:grid;place-items:center;z-index:2;
+}
+.x:hover{border-color:var(--gold);color:var(--ink)}
+.ph-note{color:var(--gold);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:9px}
+::-webkit-scrollbar{width:7px}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="side">
+    <!-- swap photos/profile.jpg for any square-ish headshot -->
+    <div class="avatar"><img src="photos/profile.jpg" alt="Shobhit Jain"
+         onerror="this.parentNode.textContent='SJ'"></div>
+    <div>
+      <h1>Shobhit Jain</h1>
+      <div class="role">PGDM · MDI Gurgaon '28</div>
+      <div class="city">Indore, Madhya Pradesh</div>
+    </div>
+    <hr>
+    <div>
+      <div class="label">About Me</div>
+      <p class="about" style="margin-top:9px">
+        I am a composed, empathetic and persistent individual who does not give up in the
+        face of difficult challenges. I believe in speaking less and listening more.
+        I enjoy solving problems, building meaningful relationships, and leaving every
+        person and every project better than I found them.
+      </p>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="creds" id="creds"></div>
+
+    <a class="mail" href="mailto:shobhitvjain@gmail.com">shobhitvjain@gmail.com</a>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- 01 -->
+    <div class="sechead">
+      <span class="num">01</span>
+      <h2>What Drives Me</h2>
+      <span class="rule"></span>
+      <span class="hint">Click a card for more</span>
+    </div>
+    <div class="drives" id="drives"></div>
+
+    <!-- 02 -->
+    <div class="sechead">
+      <span class="num">02</span>
+      <h2>My Journey</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="journey">
+      <div class="card">
+        <h3>Career Trajectory</h3>
+        <div class="sub">From school to PwC to MDI Gurgaon</div>
+        <div class="plot"><svg id="traj" preserveAspectRatio="none"></svg></div>
+      </div>
+      <div class="card">
+        <h3>Strengths &amp; Growth Areas</h3>
+        <div class="sub">Self-assessed on a 0–100 scale</div>
+        <div class="plot"><svg id="bars" preserveAspectRatio="none"></svg></div>
+        <div class="legend">
+          <span><i style="background:var(--gold)"></i>Strengths</span>
+          <span><i style="background:var(--gold-soft)"></i>Growth Areas</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Places I've Lived</h3>
+        <div class="sub" id="mapsub">Cities across India</div>
+        <div class="plot"><svg id="map"></svg></div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="sechead">
+      <span class="num">03</span>
+      <h2>In My Words</h2>
+      <span class="rule"></span>
+      <span class="hint">Click cards for more</span>
+    </div>
+    <div class="world">
+      <div class="card quote">
+        <div class="mark">&rdquo;</div>
+        <p id="quoteText">To me, beauty is the confidence to express your authentic self. It goes beyond appearance and is reflected in the way we carry ourselves. When people feel confident in who they are, they inspire confidence in others too.</p>
+        <div class="cap">What beauty means to me</div>
+      </div>
+      <div class="card drive" data-open="brand" id="cardBrand"></div>
+      <div class="card drive" data-open="facts" id="cardFacts"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="veil" id="veil">
+  <div class="modal" id="modal">
+    <button class="x" id="close" aria-label="Close">&times;</button>
+    <div class="mpics" id="mpics"></div>
+    <div class="mbody" id="mbody"></div>
+  </div>
+</div>
+
+<script>
+/* =======================================================================
+   EDIT EVERYTHING IN THIS BLOCK. The layout redraws itself automatically.
+   ======================================================================= */
+
+/* --- sidebar stat tiles: currently off. Add items here to bring back -- */
+const TILES = [];
+
+/* --- sidebar credentials: set to [] to hide ------------------------- */
+const CREDS = [
+  {t:"B.Tech · Computer Science", s:"2023"},
+  {t:"Associate · PwC India",     s:"2.5 years"}
+];
+
+/* --- SECTION 1: five drives -----------------------------------------
+   The popup heading is always the card title, so you only edit it once.
+   pics: ["photos/photo-1.jpg","photos/photo-2.jpg"] — "" = empty frame. */
+const DRIVES = [
+  {
+    icon:"book", title:"Reading", tag:"Words that shape worlds",
+    body:"I started my reading journey with fiction like Harry Potter, Sherlock Holmes, and Animal Farm. Over time, my interests evolved towards non-fiction, philosophy, and spirituality. For me, reading is a way of exploring ideas, understanding people, and discovering new possibilities.",
+    pics:["photos/photo-1.jpg","photos/photo-2.jpg"]
+  },
+  {
+    icon:"ball", title:"Sports", tag:"Discipline in motion",
+    body:"From competitive skating and school football to recreational badminton, sports have been a constant throughout my life. Beyond medals and matches, they have shaped my resilience, discipline, and belief that consistent effort is the foundation of growth.",
+    pics:["photos/photo-3.png","photos/photo-4.jpg"]
+  },
+  {
+    icon:"lotus", title:"Meditation", tag:"Stillness as strategy",
+    body:"Driven by curiosity, I completed a 10-day intensive Vipassana meditation course. It helped me cultivate greater mindfulness, sharpen my focus, and approach life with more calm and clarity.",
+    pics:["photos/photo-5.jpeg","photos/photo-6.jpg"]
+  },
+  {
+    icon:"mic", title:"Public Speaking", tag:"Ideas worth saying aloud",
+    body:"Public speaking taught me that every great idea deserves an equally compelling story. Through Toastmasters, I learned to communicate with clarity, lead with confidence, and connect with people through empathy.",
+    pics:["photos/photo-7.jpeg","photos/photo-8.jpeg"]
+  },
+  {
+    icon:"pencil", title:"Sketching", tag:"Thinking through the pencil",
+    body:"Sketching is where I slow down and let creativity take over. Every sketch teaches me to observe details, stay patient, and appreciate the beauty in small things. It reminds me that great creations are built one careful stroke at a time.",
+    pics:["photos/photo-9.jpg","photos/photo-10.jpg"]
+  }
+];
+
+/* --- SECTION 2a: career milestones (y = 0–100 height on the curve) --- */
+const MILESTONES = [
+  {date:"Jun 2017", label:"Completed 10th",                 y:10},
+  {date:"Jun 2019", label:"Completed 12th",                 y:24},
+  {date:"Jun 2023", label:"B.Tech in CSE",                   y:46},
+  {date:"Jul 2023", label:"Joined PwC as FTE",               y:56},
+  {date:"Apr 2024", label:"Promoted to Associate",           y:70},
+  {date:"Jun 2026", label:"PGDM at MDI Gurgaon",             y:94}
+];
+
+/* --- SECTION 2b: 3 strengths on top, 3 growth areas below ----------- */
+const STRENGTHS = [
+  {name:"[Strength one]",   value:92},
+  {name:"[Strength two]",   value:86},
+  {name:"[Strength three]", value:80}
+];
+const GROWTH = [
+  {name:"[Growth area one]",   value:64},
+  {name:"[Growth area two]",   value:58},
+  {name:"[Growth area three]", value:50}
+];
+
+/* --- SECTION 2c: places ("l" or "r" = which side the label sits) ---- */
+const PLACES = [
+  {name:"Gurgaon", lon:77.03, lat:28.46, side:"l"},
+  {name:"Bhopal",  lon:77.41, lat:23.26, side:"r"},
+  {name:"Kolkata", lon:88.36, lat:22.57, side:"r"},
+  {name:"Indore",  lon:75.86, lat:22.72, side:"l"},
+  {name:"Pune",    lon:73.86, lat:18.52, side:"l"}
+];
+
+/* --- SECTION 3: brand + fun facts popups ----------------------------
+   `title` is used on the card AND as the popup heading.
+   pics:null means the popup is text-only (no photo frames).           */
+const WORLD = {
+  brand:{
+    icon:"drop", title:"Garnier Men", sub:"The L'Oréal brand I relate to",
+    body:"I relate most to Garnier Men because it stands for simplicity, practicality, and confidence. I've been using Garnier Men OilClear Face Wash for years, and I appreciate how it delivers on its promise of keeping my skin fresh without unnecessary complexity.",
+    pics:null
+  },
+  facts:{
+    icon:"spark", title:"Fun Facts", sub:"5 things about me",
+    body:[
+      "01 · [PLACEHOLDER fun fact]",
+      "02 · [PLACEHOLDER fun fact]",
+      "03 · [PLACEHOLDER fun fact]",
+      "04 · [PLACEHOLDER fun fact]",
+      "05 · [PLACEHOLDER fun fact]"
+    ],
+    pics:["photos/photo-11.jpg","photos/photo-12.jpg"]
+  }
+};
+
+/* =======================================================================
+   RENDERING — no need to edit below this line
+   ======================================================================= */
+const ICONS = {
+  book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4.5A1.5 1.5 0 0 1 3 15.5z"/><path d="M21 5.5A1.5 1.5 0 0 0 19.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg>',
+  ball:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M4.4 8.6c4.6.6 8.2 3.4 10 7.9M19.6 8.6c-4.6.6-8.2 3.4-10 7.9"/></svg>',
+  lotus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.4"/><path d="M12 10c-2.6 0-4.2 1.7-4.2 3.6 0 1.4.9 2.4 2 2.9M12 10c2.6 0 4.2 1.7 4.2 3.6 0 1.4-.9 2.4-2 2.9"/><path d="M4.5 18.5c2.4-2 4.9-2.6 7.5-2.6s5.1.6 7.5 2.6"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.5M8.5 21.5h7"/></svg>',
+  pencil:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5l4 4L8 20l-4.8.8L4 16z"/><path d="M14 6l4 4"/></svg>',
+  drop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3.4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2.6-6 6-10z"/><path d="M9.4 14.4a2.8 2.8 0 0 0 2.6 2.6"/></svg>',
+  spark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9z"/><path d="M18.5 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>'
+};
+const SVGNS = "http://www.w3.org/2000/svg";
+const el = (n,a={})=>{const e=document.createElementNS(SVGNS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+
+/* ---- sidebar ---- */
+const tilesBox = document.getElementById('tiles');
+if(!TILES.length) tilesBox.style.display='none';
+TILES.forEach(t=>{
+  const d=document.createElement('div');d.className='tile';
+  d.innerHTML=`<b>${t.n}</b><span>${t.l}</span>`;tilesBox.appendChild(d);
+});
+const credsBox=document.getElementById('creds');
+if(!CREDS.length) credsBox.style.display='none';
+CREDS.forEach(c=>{
+  const d=document.createElement('div');d.className='cred';
+  d.innerHTML=`<span class="dot"></span><div><b>${c.t}</b><span>${c.s}</span></div>`;
+  credsBox.appendChild(d);
+});
+
+/* ---- section 1 cards ---- */
+const drivesBox=document.getElementById('drives');
+DRIVES.forEach((d,i)=>{
+  const c=document.createElement('div');c.className='card drive';c.dataset.open='drive'+i;
+  c.innerHTML=`<div class="ico">${ICONS[d.icon]}</div>
+    <h3 style="margin-top:9px">${d.title}</h3>
+    <div class="sub">${d.tag}</div>
+    <div class="more">View more →</div>`;
+  drivesBox.appendChild(c);
+});
+
+/* ---- section 3 cards (title is shared with the popup heading) ---- */
+[['cardBrand','brand'],['cardFacts','facts']].forEach(([id,key])=>{
+  const w=WORLD[key];
+  document.getElementById(id).innerHTML=
+    `<div class="ico">${ICONS[w.icon]}</div>
+     <h3 style="margin-top:9px">${w.title}</h3>
+     <div class="sub">${w.sub}</div>
+     <div class="more">View more →</div>`;
+});
+
+/* ---- 2a: career trajectory ---- */
+function drawTrajectory(){
+  const svg=document.getElementById('traj');
+  const box=svg.parentNode.getBoundingClientRect();
+  const W=box.width, H=box.height;
+  if(W<10||H<10) return;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML='';
+  const L=6,R=6,T=40,B=22;
+  const n=MILESTONES.length;
+  const x=i=>L+(W-L-R)*(i/(n-1));
+  const y=v=>T+(H-T-B)*(1-v/100);
+
+  // baseline + axis
+  svg.appendChild(el('line',{x1:L,y1:H-B,x2:W-R,y2:H-B,stroke:'#E5E5E5','stroke-width':1}));
+
+  // smooth path
+  const pts=MILESTONES.map((m,i)=>[x(i),y(m.y)]);
+  let d=`M ${pts[0][0]} ${pts[0][1]}`;
+  for(let i=0;i<pts.length-1;i++){
+    const [x0,y0]=pts[i],[x1,y1]=pts[i+1],cx=(x0+x1)/2;
+    d+=` C ${cx} ${y0}, ${cx} ${y1}, ${x1} ${y1}`;
+  }
+  const area=document.createElementNS(SVGNS,'path');
+  area.setAttribute('d',d+` L ${pts[n-1][0]} ${H-B} L ${pts[0][0]} ${H-B} Z`);
+  area.setAttribute('fill','rgba(200,169,106,.10)');
+  svg.appendChild(area);
+  svg.appendChild(el('path',{d,fill:'none',stroke:'#C8A96A','stroke-width':2,'stroke-linecap':'round'}));
+
+  MILESTONES.forEach((m,i)=>{
+    const px=x(i),py=y(m.y);
+    svg.appendChild(el('circle',{cx:px,cy:py,r:4.2,fill:'#FAFAF8',stroke:'#C8A96A','stroke-width':2}));
+
+    // milestone label — always ABOVE the point, bold.
+    // Alternating lift keeps neighbouring labels from colliding.
+    const anchor = i===0?'start' : i===n-1?'end' : 'middle';
+    const words=m.label.split(' ');
+    const lines=[];let cur='';
+    words.forEach(w=>{ if((cur+' '+w).trim().length>14){lines.push(cur.trim());cur=w;} else cur+=' '+w; });
+    if(cur.trim())lines.push(cur.trim());
+    const lh=9.4, lift=(i%2===0)?0:11;
+    const baseY = Math.max(9+(lines.length-1)*lh, py-14-lift-(lines.length-1)*lh);
+    lines.forEach((ln,k)=>{
+      const t=el('text',{x:px,y:baseY+k*lh,'text-anchor':anchor,
+        fill:'#111111','font-size':7.6,'font-family':'Inter,sans-serif','font-weight':700});
+      t.textContent=ln;svg.appendChild(t);
+    });
+
+    const dt=el('text',{x:px,y:H-B+13,'text-anchor':anchor,
+      fill:'#555555','font-size':8,'font-family':'Inter,sans-serif'});
+    dt.textContent=m.date;svg.appendChild(dt);
+  });
+}
+
+/* ---- 2b: strengths vs growth ---- */
+function drawBars(){
+  const svg=document.getElementById('bars');
+  const box=svg.parentNode.getBoundingClientRect();
+  const W=box.width,H=box.height;
+  if(W<10||H<10) return;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML='';
+  const LBL=Math.min(92,W*0.36), R=16, T=2, B=14;
+  const plotW=W-LBL-R, plotH=H-T-B;
+  const items=[...STRENGTHS.map(s=>({...s,kind:'s'})),...GROWTH.map(g=>({...g,kind:'g'}))];
+  const rows=items.length, rowH=plotH/rows, barH=Math.min(10,rowH*0.46);
+
+  [0,25,50,75,100].forEach(v=>{
+    const gx=LBL+plotW*v/100;
+    svg.appendChild(el('line',{x1:gx,y1:T,x2:gx,y2:T+plotH,stroke:'#E5E5E5','stroke-width':1,
+      'stroke-dasharray':v===0?'':'2 3'}));
+    const t=el('text',{x:gx,y:H-3,'text-anchor':'middle',fill:'#555555','font-size':7.5,'font-family':'Inter,sans-serif'});
+    t.textContent=v;svg.appendChild(t);
+  });
+
+  items.forEach((s,i)=>{
+    const cy=T+rowH*i+rowH/2;
+    const lb=el('text',{x:LBL-8,y:cy+3,'text-anchor':'end',fill:'#111111','font-size':8.4,
+      'font-family':'Inter,sans-serif','font-weight':500});
+    lb.textContent=s.name;svg.appendChild(lb);
+    svg.appendChild(el('rect',{x:LBL,y:cy-barH/2,width:Math.max(1,plotW*s.value/100),height:barH,
+      fill:s.kind==='s'?'#C8A96A':'rgba(200,169,106,.30)',rx:1.5}));
+  });
+
+  // divider between the strengths block and the growth block
+  const dy=T+rowH*STRENGTHS.length;
+  svg.appendChild(el('line',{x1:6,y1:dy,x2:W-R,y2:dy,stroke:'#E5E5E5','stroke-width':1}));
+}
+
+/* ---- 2c: India map ---- */
+const INDIA=[[74.0,34.5],[76.5,35.5],[78.5,34.5],[79.0,33.0],[78.8,31.3],[81.0,30.3],[83.0,29.2],
+[85.0,27.5],[88.0,27.2],[88.9,27.3],[89.5,26.7],[92.0,26.9],[94.0,27.5],[95.5,27.0],[97.4,28.2],
+[96.5,27.0],[97.0,25.5],[94.5,24.0],[93.4,24.1],[92.6,22.0],[91.0,23.0],[89.0,21.9],[87.0,21.5],
+[86.5,20.2],[85.0,19.5],[83.0,17.5],[80.3,16.0],[80.2,13.5],[79.8,11.5],[79.9,10.3],[78.2,9.0],
+[77.5,8.1],[76.5,8.9],[75.7,11.5],[74.5,14.5],[73.5,16.0],[72.9,19.1],[72.7,21.0],[69.0,22.5],
+[68.2,23.8],[70.0,24.0],[70.5,25.7],[71.9,27.9],[73.0,29.5],[74.5,31.0],[75.4,32.3]];
+
+function drawMap(){
+  const svg=document.getElementById('map');
+  const box=svg.parentNode.getBoundingClientRect();
+  const W=box.width,H=box.height;
+  if(W<10||H<10) return;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML='';
+  const lons=INDIA.map(p=>p[0]),lats=INDIA.map(p=>p[1]);
+  const minLon=Math.min(...lons),maxLon=Math.max(...lons);
+  const minLat=Math.min(...lats),maxLat=Math.max(...lats);
+  const pad=8;
+  const sc=Math.min((W-pad*2)/(maxLon-minLon),(H-pad*2)/(maxLat-minLat));
+  const offX=(W-(maxLon-minLon)*sc)/2, offY=(H-(maxLat-minLat)*sc)/2;
+  const px=lo=>offX+(lo-minLon)*sc;
+  const py=la=>offY+(maxLat-la)*sc;
+
+  const d=INDIA.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(1)+' '+py(p[1]).toFixed(1)).join(' ')+' Z';
+  svg.appendChild(el('path',{d,fill:'rgba(200,169,106,.10)',stroke:'#E5E5E5','stroke-width':1,
+    'stroke-linejoin':'round'}));
+
+  PLACES.forEach(p=>{
+    const cx=px(p.lon),cy=py(p.lat);
+    svg.appendChild(el('circle',{cx,cy,r:6,fill:'rgba(200,169,106,.30)'}));
+    svg.appendChild(el('circle',{cx,cy,r:2.8,fill:'#C8A96A'}));
+    const right=p.side!=='l';
+    const t=el('text',{x:cx+(right?8:-8),y:cy+3,'text-anchor':right?'start':'end',
+      fill:'#111111','font-size':7.8,'font-family':'Inter,sans-serif','font-weight':600});
+    t.textContent=p.name;svg.appendChild(t);
+  });
+  document.getElementById('mapsub').textContent=`${PLACES.length} cities across India`;
+}
+
+/* ---- modal ---- */
+const veil=document.getElementById('veil'),modal=document.getElementById('modal'),
+      mpics=document.getElementById('mpics'),mbody=document.getElementById('mbody');
+
+function openModal(data){
+  if(data.pics){                                   // photo-stack layout
+    const pics=data.pics.slice(0,2);
+    while(pics.length<2) pics.push("");
+    mpics.innerHTML=pics.map((src,i)=>src
+      ? `<div class="slot p${i+1}"><img src="${src}" alt=""></div>`
+      : `<div class="slot p${i+1}"><div class="ph"><b>Photo ${i+1}</b>Add an image to the<br>photos/ folder and list<br>it in this card's pics</div></div>`
+    ).join('');
+    mpics.style.display='grid';
+    modal.classList.remove('solo');
+  }else{                                           // text-only layout
+    mpics.innerHTML='';
+    mpics.style.display='none';
+    modal.classList.add('solo');
+  }
+  const paras=Array.isArray(data.body)?data.body:[data.body];
+  mbody.innerHTML=
+    (data.icon?`<div class="ico">${ICONS[data.icon]}</div>`:'')+
+    `<h3>${data.title}</h3><div class="divider"></div>`+
+    paras.map(p=>`<p>${p}</p>`).join('');
+  mbody.scrollTop=0;
+  veil.classList.add('on');
+}
+document.addEventListener('click',e=>{
+  const card=e.target.closest('[data-open]');
+  if(card){
+    const k=card.dataset.open;
+    openModal(k.startsWith('drive') ? DRIVES[+k.slice(5)] : WORLD[k]);
+  }
+});
+document.getElementById('close').onclick=()=>veil.classList.remove('on');
+veil.addEventListener('click',e=>{if(e.target===veil)veil.classList.remove('on');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')veil.classList.remove('on');});
+
+/* ---- draw + redraw ---- */
+function drawAll(){drawTrajectory();drawBars();drawMap();}
+window.addEventListener('load',drawAll);
+window.addEventListener('resize',()=>{clearTimeout(window._t);window._t=setTimeout(drawAll,120);});
+drawAll();
+</script>
+</body>
+</html>
