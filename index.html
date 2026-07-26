@@ -165,6 +165,10 @@ body{
 .mbody h3{font-family:var(--serif);font-size:clamp(19px,2.7vh,27px);font-weight:600;line-height:1.2}
 .mbody .divider{width:38px;height:1px;background:var(--gold);margin:clamp(11px,1.6vh,16px) 0 2px}
 .mbody p{color:var(--muted);font-size:clamp(11.5px,1.5vh,14px);line-height:1.78;margin-top:13px;max-width:44ch}
+.mbody.list{text-align:left;align-items:stretch}
+.mbody.list h3,.mbody.list .ico{align-self:center}
+.mbody.list .divider{align-self:center}
+.mbody.list p{margin-top:clamp(9px,1.5vh,15px);max-width:none;line-height:1.6}
 .x{
   position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;
   border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;
@@ -334,14 +338,14 @@ const MILESTONES = [
 
 /* --- SECTION 2b: 3 strengths on top, 3 growth areas below ----------- */
 const STRENGTHS = [
-  {name:"[Strength one]",   value:92},
-  {name:"[Strength two]",   value:86},
-  {name:"[Strength three]", value:80}
+  {name:"Persistence",      value:92},
+  {name:"Empathy",          value:87},
+  {name:"Level-headedness", value:81}
 ];
 const GROWTH = [
-  {name:"[Growth area one]",   value:64},
-  {name:"[Growth area two]",   value:58},
-  {name:"[Growth area three]", value:50}
+  {name:"Reserved Nature",  value:62},
+  {name:"Perfectionism",    value:56},
+  {name:"Depth over Speed", value:50}
 ];
 
 /* --- SECTION 2c: places ("l" or "r" = which side the label sits) ---- */
@@ -363,13 +367,13 @@ const WORLD = {
     pics:null
   },
   facts:{
-    icon:"spark", title:"Fun Facts", sub:"5 things about me",
+    icon:"spark", title:"Little Things That Matter", sub:"5 things about me",
     body:[
-      "01 · [PLACEHOLDER fun fact]",
-      "02 · [PLACEHOLDER fun fact]",
-      "03 · [PLACEHOLDER fun fact]",
-      "04 · [PLACEHOLDER fun fact]",
-      "05 · [PLACEHOLDER fun fact]"
+      "✍️&nbsp; I journal regularly to organize my thoughts and reflect on my experiences.",
+      "💬&nbsp; I enjoy deep conversations about life, growth, and personal challenges.",
+      "🤝&nbsp; Supporting others in their journeys gives me a genuine sense of purpose.",
+      "🌱&nbsp; Advice to my younger self: “Don’t pretend. Be authentically you.”",
+      "❤️&nbsp; I believe emotional education is just as important as academic education."
     ],
     pics:["photos/photo-11.jpg","photos/photo-12.jpg"]
   }
@@ -575,6 +579,7 @@ function openModal(data){
     modal.classList.add('solo');
   }
   const paras=Array.isArray(data.body)?data.body:[data.body];
+  mbody.classList.toggle('list',paras.length>2);   // lists read better left-aligned
   mbody.innerHTML=
     (data.icon?`<div class="ico">${ICONS[data.icon]}</div>`:'')+
     `<h3>${data.title}</h3><div class="divider"></div>`+
